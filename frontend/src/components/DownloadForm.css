@@ -1,0 +1,214 @@
+/* --- Modern Dark Theme Redesign --- */
+/* By Gemini */
+
+/* Import a modern font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+/* Define a color palette using CSS variables for easy theming */
+:root {
+  --bg-dark: #121212; /* Very dark grey, almost black */
+  --surface-dark: #1e1e1e; /* A slightly lighter grey for cards */
+  --primary-blue: #3a7bd5;
+  --primary-blue-light: #00d2ff;
+  --text-light: #e0e0e0; /* Off-white for body text */
+  --text-dark: #b3b3b3; /* Grey for subtitles */
+  --error-red: #ff4d4d;
+  --border-color: #333;
+  --shadow-color: rgba(0, 0, 0, 0.4);
+}
+
+/* --- General & Layout --- */
+
+body {
+  background-color: var(--bg-dark);
+  font-family: 'Poppins', sans-serif;
+  color: var(--text-light);
+  margin: 0;
+  padding: 1rem; /* Ensures content isn't flush with the screen edges on mobile */
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased; /* Smoother fonts on Mac */
+  -moz-osx-font-smoothing: grayscale; /* Smoother fonts on Firefox */
+}
+
+.yd-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: var(--surface-dark);
+  border-radius: 16px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 8px 32px var(--shadow-color);
+  transition: all 0.3s ease-in-out;
+}
+
+.yd-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  /* A cool gradient effect for the title */
+  background: linear-gradient(90deg, var(--primary-blue), var(--primary-blue-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 15px rgba(58, 123, 213, 0.4);
+}
+
+.yd-subtitle {
+  text-align: center;
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  color: var(--text-dark);
+}
+
+/* --- Form Elements --- */
+
+.yd-form {
+  display: flex;
+  flex-direction: column; /* Mobile-first: stack elements vertically */
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.yd-input {
+  flex: 1;
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.yd-input:focus {
+  outline: none;
+  border-color: var(--primary-blue);
+  box-shadow: 0 0 0 3px rgba(58, 123, 213, 0.3);
+}
+
+.yd-button {
+  background: linear-gradient(90deg, var(--primary-blue), var(--primary-blue-light));
+  border: none;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 15px var(--shadow-color);
+}
+
+.yd-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px var(--shadow-color);
+}
+
+.yd-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* --- Results & Download List --- */
+
+.yd-error {
+  color: var(--error-red);
+  background-color: rgba(255, 77, 77, 0.1);
+  padding: 0.75rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.yd-video-title {
+  margin: 1.5rem 0;
+  font-size: 1.5rem;
+  text-align: center;
+  font-weight: 600;
+}
+
+.yd-section {
+  margin-bottom: 2rem;
+}
+
+.yd-section h3 {
+  border-bottom: 2px solid var(--primary-blue);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.yd-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.yd-list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid var(--border-color);
+  padding: 1rem;
+  border-radius: 8px;
+  background: var(--bg-dark);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.yd-list-item:hover {
+  background-color: #2a2a2a;
+  transform: scale(1.02);
+}
+
+.yd-format-info {
+  font-size: 1rem;
+  color: var(--text-light);
+}
+
+.yd-format-info span {
+  color: var(--text-dark);
+  font-size: 0.9rem;
+}
+
+.yd-download-btn {
+  background: transparent;
+  color: var(--primary-blue-light);
+  border: 1px solid var(--primary-blue-light);
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.yd-download-btn:hover:not(:disabled) {
+  background-color: var(--primary-blue-light);
+  color: var(--bg-dark);
+}
+
+/* --- Responsive Adjustments --- */
+/* Using min-width for a mobile-first approach */
+
+/* For Tablets and small desktops */
+@media (min-width: 768px) {
+  .yd-form {
+    flex-direction: row; /* Switch to horizontal layout */
+  }
+
+  .yd-list {
+    /* Create a two-column grid for the format list */
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .yd-container {
+    padding: 2.5rem;
+  }
+}
+
+/* For larger desktops */
+@media (min-width: 1024px) {
+    .yd-container {
+        margin: 4rem auto;
+    }
+}
