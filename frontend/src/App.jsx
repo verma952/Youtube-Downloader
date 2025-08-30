@@ -1,5 +1,6 @@
 import { HelmetProvider, Helmet } from "react-helmet-async";
 import DownloadForm from "./components/DownloadForm";
+import Footer from "./pages/Footer";
 import "./App.css";
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       </Helmet>
       <DownloadForm />
     </div>
+    <Footer />
     </HelmetProvider>
   );
 }
