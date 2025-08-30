@@ -56,8 +56,6 @@ export default function YouTubeDownloader() {
 };
   return (
     <div className="yd-container">
-      <h1 className="yd-title">YouTube Downloader</h1>
-      <h3 className="yd-subtitle">Download YouTube Videos and Audios Here. Just paste your link...</h3>
       <form className="yd-form" onSubmit={fetchFormats}>
         <input
           className="yd-input"

@@ -1,3 +1,12 @@
-# https://www.robotstxt.org/robotstxt.html
 User-agent: *
-Disallow:
+Allow: /
+
+# Block sensitive files
+Disallow: /admin/
+Disallow: /api/
+Disallow: /server/
+Disallow: /node_modules/
+Disallow: /config/
+Disallow: /backend/
+
+Sitemap: https://yourdomain.com/sitemap.xml
